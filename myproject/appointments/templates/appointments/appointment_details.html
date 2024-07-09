@@ -1,0 +1,10 @@
+<!-- appointments/templates/appointments/appointment_details.html -->
+
+{% extends "appointments/base.html" %}
+{% block content %}
+<h2>Appointment Details</h2>
+<p>Doctor: {{ appointment.doctor.user.get_full_name }}</p>
+<p>Date: {{ appointment.date }}</p>
+<p>Start Time: {{ appointment.start_time }}</p>
+<p>End Time: {{ appointment.end_time }}</p>
+{% endblock %}

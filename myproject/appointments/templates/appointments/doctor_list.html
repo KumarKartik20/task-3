@@ -1,0 +1,36 @@
+<!-- appointments/templates/appointments/doctor_list.html -->
+
+{% extends "appointments/base.html" %}
+{% block content %}
+<h2>Doctors</h2>
+<ul>
+    {% for doctor in doctors %}
+    <li>
+        <img src="{{ doctor.profile_picture.url }}" alt="{{ doctor.user.get_full_name }}" width="50" height="50">
+        {{ doctor.user.get_full_name }} - {{ doctor.speciality }}
+        <a href="{% url 'book_appointment' doctor.id %}">Book Appointment</a>
+    </li>
+    {% endfor %}
+    <!-- Example data for 4 doctors (replace with actual data) -->
+    <li>
+
+        Doctor 1 - Cardiology
+        <a href="{% url 'book_appointment'%}">Book Appointment</a>
+    </li>
+    <li>
+
+        Doctor 2 - Neurology
+        <a href="{% url 'book_appointment'%}">Book Appointment</a>
+    </li>
+    <li>
+
+        Doctor 3 - Pediatrics
+        <a href="{% url 'book_appointment'%}">Book Appointment</a>
+    </li>
+    <li>
+
+        Doctor 4 - Orthopedics
+        <a href="{% url 'book_appointment'%}">Book Appointment</a>
+    </li>
+</ul>
+{% endblock %}
